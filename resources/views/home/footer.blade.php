@@ -1,65 +1,59 @@
-<footer>
-    <div class="footer">
-       <div class="container">
-          <div class="row">
-             <div class=" col-md-4">
-                <h3>Contact US</h3>
-                <ul class="conta">
-                   <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
-                   <li><i class="fa fa-mobile" aria-hidden="true"></i> +01 1234569540</li>
-                   <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> demo@gmail.com</a></li>
-                </ul>
-             </div>
-             <div class="col-md-4">
-                <h3>Menu Link</h3>
-                <ul class="link_menu">
-                   <li class="active"><a href="#">Home</a></li>
-                   <li><a href="about.html"> about</a></li>
-                   <li><a href="room.html">Our Room</a></li>
-                   <li><a href="gallery.html">Gallery</a></li>
-                   <li><a href="blog.html">Blog</a></li>
-                   <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-             </div>
-             <div class="col-md-4">
-                <h3>News letter</h3>
-                <form class="bottom_form">
-                   <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                   <button class="sub_btn">subscribe</button>
-                </form>
-                <ul class="social_icon">
-                   <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                   <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                   <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                   <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                </ul>
-             </div>
-          </div>
+<section id="contact" class="footer_wrapper mt-3 mt-md-0 pb-0">
+   <div class="container pb-3">
+       <div class="row">
+           <div class="col-lg-3 col-md-6">
+               <h5>Info Hotel</h5>
+               <p class="ps-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dignissim erat ut laoreet
+                   pharetra....</p>
+               <div class="contact-info">
+                   <ul class="list-unstyled">
+                       <li><a href="#"><i class="fa fa-home me-3"></i> No. 96, South City, London</a></li>
+                       <li><a href="#"><i class="fa fa-phone me-3"></i>0883536985</a></li>
+                       <li><a href="#"><i class="fa fa-envelope me-3"></i>info@example.com</a></li>
+                   </ul>
+               </div>
+           </div>
+           <div class="col-lg-3 col-md-6">
+               <h5>Altri Link</h5>
+               <ul class="link-widget p-0">
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+               </ul>
+           </div>
+           <div class="col-lg-3 col-md-6">
+               <h5>Altri Link</h5>
+               <ul class="link-widget p-0">
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+                   <li><a href="#">Link</a></li>
+               </ul>
+           </div>
+           <div class="col-lg-3 col-md-6">
+               <h5>Newsletter</h5>
+               <div class="form-group mb-4">
+                   <input type="email" class="form-control bg-transparent" placeholder="Inserisci la tua email">
+                   <button type="submit" class="main-btn rounded-2 mt-3 border-white text-white">Iscriviti</button>
+               </div>
+               <h5>Rimani connesso</h5>
+               <ul class="social-network d-flex align-items-center p-0">
+                   <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                   <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                   <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                   <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+               </ul>
+           </div>
        </div>
-       <div class="copyright">
-          <div class="container">
-             <div class="row">
-                <div class="col-md-10 offset-md-1">
-                   
-                   <p>
-                   © 2019 All Rights Reserved. Design by <a href="https://html.design/"> Free Html Templates</a>
-                   <br><br>
-                   Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-                   </p>
-
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
- </footer>
- <!-- end footer -->
- <!-- Javascript files-->
- <script src="js/jquery.min.js"></script>
- <script src="js/bootstrap.bundle.min.js"></script>
- <script src="js/jquery-3.0.0.min.js"></script>
- <!-- sidebar -->
- <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
- <script src="js/custom.js"></script>
- <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
- 
+   </div>
+   <div class="container-fluid copyright-section">
+       <p>Copyright <a href="#">2024</a> All Rights Reserved <a href="#home"><i class="bi bi-arrow-up-circle-fill"></i></a></p>
+   </div>
+</section>

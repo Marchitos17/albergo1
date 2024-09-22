@@ -1,4 +1,4 @@
-<div class="about">
+<!--<div class="about">
     <div class="container-fluid">
        <div class="row">
           <div class="col-md-5">
@@ -16,3 +16,21 @@
        </div>
     </div>
  </div>
+
+-->
+
+<section id="about" class="about_wrapper">
+   <div class="container">
+     <div class="row flex-lg-row flex-column-reverse">
+       <div class="col-lg-6 text-center text-lg-start">
+         <h3>Benvenuto allo <span>Spina's Hotel,<br class="d-none d-lg-block">prenota </span> il tuo weekend</h3>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+           <a href="" class="main-btn mt-4">Esplora</a>
+       </div>
+       <div class="col-lg-6 mb-4 mb-lg-0 ps-lg-4 text-center">
+         <img src="immagini/images/about-img.svg" class="img-fluid" alt="about">
+       </div>
+     </div>
+   </div>
+ </section>

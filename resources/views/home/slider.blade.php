@@ -1,4 +1,4 @@
-<section class="banner_main">
+<!--<section class="banner_main">
     <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
        <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -55,4 +55,66 @@
           </div>
        </div>
     </div>
- </section>
+ </section>-->
+
+ <section id="home" class="banner_wrapper p-0">
+   <div class="swiper mySwiper">
+       <div class="swiper-wrapper">
+           <!-- Slides -->
+           <div class="swiper-slide" style="background-image: url(./immagini/images/slider/slider2.webp);">
+               <div class="slide-caption text-center">
+                   <div>
+                       <h1>Benvenuto allo Spina's Hotel</h1>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                   </div>
+               </div>
+           </div>
+           <div class="swiper-slide" style="background-image: url(./immagini/images/slider/slider1.webp);">
+               <div class="slide-caption text-center">
+                   <div>
+                       <h1>Benvenuto allo Spina's Hotel</h1>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                       quis nostrud exercitation ullamco </p>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="swiper-pagination"></div>
+   </div>
+   <div class="container booking-area">
+       <form action="" class="row">
+           <div class=" col-lg mb-3 mb-l-0">
+               <input type="date" class="form-control" placeholder="Data">
+           </div>
+           <div class="col-lg mb-3 mb-l-0">
+               <input type="date" class="form-control" placeholder="Data">
+           </div>
+           <div class="col-lg mb-3 mb-lg-0">
+               <select name="" id="" class="form-select">
+                   <option selected>Adulti</option>
+                   <option value="1">1</option>
+                   <option value="2">2</option>
+                   <option value="3">3</option>
+                   <option value="4">4</option>
+                   <option value="5">5</option>
+                   <option value="6">6</option>
+               </select>
+           </div>
+           <div class="col-lg mb-3 mb-lg-0">
+               <select name="" id="" class="form-select">
+                   <option selected>Bambini</option>
+                   <option value="1">1</option>
+                   <option value="2">2</option>
+                   <option value="3">3</option>
+                   <option value="4">4</option>
+                   <option value="5">5</option>
+                   <option value="6">6</option>
+               </select>
+           </div>
+           <div class="col-lg mb-3 mb-lg-0">
+               <button type="submit" class="main-btn rounded-2 px-lg-3">Cerca Disponibilita'</button>
+           </div>
+       </form>
+   </div>
+</section>
