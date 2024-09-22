@@ -12,7 +12,7 @@ use App\Http\Controllers\AdminController;
 //});
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('home.index1');
 });
 //Route::get('/home', [AdminController::class,'index'])->name('home')->middleware(['auth','admin']);
 Route::get('/cc', [AdminController::class,'crea_camera'])->name('create_camera')->middleware(['auth','admin']);

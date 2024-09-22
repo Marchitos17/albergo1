@@ -327,7 +327,7 @@
                      @endif
                   @else 
                   
-                    <a class="read_more" href="{{route('login',compact($notification))}}">Prenota Ora</a>
+                    <a class="read_more" href="{{route('login')}}">Prenota Ora</a>
                   @endauth
                   @endif
             </div>

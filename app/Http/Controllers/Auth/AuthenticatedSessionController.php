@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
             
         $usertype = $request->user()->usertype;
             if($usertype == 'user'){
-                return view('home.index');
+                return view('home.index1');
             }else if($usertype == 'admin'){
                 return view('admin.index');
             }else {
