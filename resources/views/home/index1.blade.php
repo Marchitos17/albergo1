@@ -222,75 +222,75 @@
             <h3>$150<sub class="fs-6 fw-normal">/NIGHT</sub></h3>
             <a href="#" class="main-btn">Sign Up</a>
         </div>
-    </div>
-    <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card p-4 text-center rounded-3">
-            <h5 class="text-decoration-underline mb-4">Economic</h5>
-            <ul class="list-unstyled">
-                <li>
-                    <p>Flight Ticket(2)</p>
-                </li>
-                <li>
-                    <p>Music Concert (30% Off)</p>
-                </li>
-                <li>
-                    <p>Restaurant (Snacks)</p>
-                </li>
-                <li>
-                    <p>Face Make(No)</p>
-                </li>
-            </ul>
-            <hr />
-            <h3>$150<sub class="fs-6 fw-normal">/NIGHT</sub></h3>
-            <a href="#" class="main-btn">Sign Up</a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card p-4 text-center rounded-3">
-            <h5 class="text-decoration-underline mb-4">Economic</h5>
-            <ul class="list-unstyled">
-                <li>
-                    <p>Flight Ticket(2)</p>
-                </li>
-                <li>
-                    <p>Music Concert (30% Off)</p>
-                </li>
-                <li>
-                    <p>Restaurant (Snacks)</p>
-                </li>
-                <li>
-                    <p>Face Make(No)</p>
-                </li>
-            </ul>
-            <hr />
-            <h3>$150<sub class="fs-6 fw-normal">/NIGHT</sub></h3>
-            <a href="#" class="main-btn">Sign Up</a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card p-4 text-center rounded-3">
-            <h5 class="text-decoration-underline mb-4">Economic</h5>
-            <ul class="list-unstyled">
-                <li>
-                    <p>Flight Ticket(2)</p>
-                </li>
-                <li>
-                    <p>Music Concert (30% Off)</p>
-                </li>
-                <li>
-                    <p>Restaurant (Snacks)</p>
-                </li>
-                <li>
-                    <p>Face Make(No)</p>
-                </li>
-            </ul>
-            <hr />
-            <h3>$150<sub class="fs-6 fw-normal">/NIGHT</sub></h3>
-            <a href="#" class="main-btn">Sign Up</a>
-        </div>
-    </div>
-</div>
-</div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card p-4 text-center rounded-3">
+              <h5 class="text-decoration-underline mb-4">Economic</h5>
+              <ul class="list-unstyled">
+                  <li>
+                      <p>Flight Ticket(2)</p>
+                  </li>
+                  <li>
+                      <p>Music Concert (30% Off)</p>
+                  </li>
+                  <li>
+                      <p>Restaurant (Snacks)</p>
+                  </li>
+                  <li>
+                      <p>Face Make(No)</p>
+                  </li>
+              </ul>
+              <hr />
+              <h3>$150<sub class="fs-6 fw-normal">/NIGHT</sub></h3>
+              <a href="#" class="main-btn">Sign Up</a>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card p-4 text-center rounded-3">
+              <h5 class="text-decoration-underline mb-4">Economic</h5>
+              <ul class="list-unstyled">
+                  <li>
+                      <p>Flight Ticket(2)</p>
+                  </li>
+                  <li>
+                      <p>Music Concert (30% Off)</p>
+                  </li>
+                  <li>
+                      <p>Restaurant (Snacks)</p>
+                  </li>
+                  <li>
+                      <p>Face Make(No)</p>
+                  </li>
+              </ul>
+              <hr />
+              <h3>$150<sub class="fs-6 fw-normal">/NIGHT</sub></h3>
+              <a href="#" class="main-btn">Sign Up</a>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card p-4 text-center rounded-3">
+              <h5 class="text-decoration-underline mb-4">Economic</h5>
+              <ul class="list-unstyled">
+                  <li>
+                      <p>Flight Ticket(2)</p>
+                  </li>
+                  <li>
+                      <p>Music Concert (30% Off)</p>
+                  </li>
+                  <li>
+                      <p>Restaurant (Snacks)</p>
+                  </li>
+                  <li>
+                      <p>Face Make(No)</p>
+                  </li>
+              </ul>
+              <hr />
+              <h3>$150<sub class="fs-6 fw-normal">/NIGHT</sub></h3>
+              <a href="#" class="main-btn">Sign Up</a>
+          </div>
+      </div>
+      </div>
+      </div>
     </section>
 
     <section id="blog" class="blog_wrapper pb-0">

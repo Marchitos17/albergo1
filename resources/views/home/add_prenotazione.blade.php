@@ -3,20 +3,8 @@
    <head>
       @include('home.css')
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-      <style>
-        .sfondo{
-          background-color: #ebf3ff !important;
-        }
-      </style>
    </head>
-
-   <!-- body -->
-   <body class="main-layout">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
-      </div>
-      <!-- end loader -->
+   <body>
       <header>
         @include('home.header')
       </header>
@@ -41,8 +29,8 @@
         
     <div class="container">
       <main>
-        <div class="py-5 text-center">
-          <h2>Checkout</h2>
+        <div class="col-sm-12 section-title text-center mb-5 mt-3">
+          <h3>Checkout</h3>
         </div>
         <!--Indicatori pagina-->
         <div class="position-relative m-4">
@@ -227,7 +215,7 @@
     
               <hr class="my-4">
     
-              <button class="w-100 btn btn-primary btn-lg" type="submit">Continua con il pagamento</button>
+              <button class="w-100 btn btn-primary btn-lg mb-5" type="submit">Continua con il pagamento</button>
           </div>
         </div>
       </form>

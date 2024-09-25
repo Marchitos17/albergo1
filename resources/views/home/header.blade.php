@@ -82,7 +82,7 @@
 <header class="header_wrapper">
    <nav class="navbar navbar-expand-lg">
        <div class="container">
-         <a class="navbar-brand" href="#">
+         <a class="navbar-brand" href="{{url('/')}}">
            <img src="immagini/logo4spina.png" claass="img-fluid" style="width: 100px; border-radius:50%" alt="logo">
          </a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

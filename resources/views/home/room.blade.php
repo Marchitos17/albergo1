@@ -43,9 +43,9 @@
      </div>
      <div class="row m-0">
       @foreach ($camere as $cameree)
-       <div class="col-md-4 mb-4 mb-lg-0">
-         <div class="room-items">
-           <img src="room/{{$cameree->immagine}}" class="img-fluid" alt="">
+       <div class="col-md-4 mb-5 mb-lg-0">
+         <div class="room-items mb-3">
+           <img src="room/{{$cameree->immagine}}" style="width:600px; height:550px;" class="img-fluid" alt="">
            <div class="room-item-wrap">
              <div class="room-content">
                <h5 class="text-white mb-lg-5 text-decoration-underline">{{$cameree->titolo}}</h5>
