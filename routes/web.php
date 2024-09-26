@@ -14,7 +14,7 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('home.index1');
 });
-//Route::get('/home', [AdminController::class,'index'])->name('home')->middleware(['auth','admin']);
+Route::get('/home', [AdminController::class,'index'])->name('homea')->middleware(['auth','admin']);
 Route::get('/cc', [AdminController::class,'crea_camera'])->name('create_camera')->middleware(['auth','admin']);
 Route::post('/cc/u', [AdminController::class,'add_camera'])->name('add_camera')->middleware(['auth','admin']);
 Route::get('/v', [AdminController::class,'mostra_camere'])->name('view_camere')->middleware(['auth','admin']);

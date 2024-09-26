@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     @include('home.css')
 </head>
-<body>
+<body >
     @session('status')
         <div class="mb-4 font-medium text-sm text-green-600">
             {{ $value }}
         </div>
     @endsession
-    <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5 text-center" style="background-image: url(./immagini/images/slider/slider2.webp); 
+    background-repeat: no-repeat; background-position: center center; background-size: cover; width: 100%;
+    height: 100%;"tabindex="-1" role="dialog" id="modalSignin">
         <div class="modal-dialog" role="document">
           <div class="modal-content rounded-4 shadow">
-            <div class="modal-header p-5 pb-4 border-bottom-0">
-              <h1 class="fw-bold mb-0 fs-2">Accedi</h1>
-            </div>
+              <div class="flex items-center justify-end mt-4">
+                <a href="{{url('/')}}"><img src="immagini/logo4spina.png" class="" style="width: 150px; border-radius:50%; " alt="logo"></a>
+              </div>
+            <h1 class="fw-bold mb-0 fs-2 text-black text-center">Accedi</h1>
       
             <div class="modal-body p-5 pt-0">
         @if ($errors->any())

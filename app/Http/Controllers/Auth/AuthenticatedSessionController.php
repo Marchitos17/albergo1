@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
             if($usertype == 'user'){
                 return view('home.index1');
             }else if($usertype == 'admin'){
-                return view('admin.index');
+                return view('home.index1');
             }else {
             if (Auth::check()) {
                 // The user is logged in...
