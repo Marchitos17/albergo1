@@ -32,6 +32,7 @@ Route::group(['middleware' => 'auth'], function() {
 });  
 Route::post('/agg{id}', [HomeController::class,'aggiungip'])->name('aggiungip');
 Route::get('/v1/{id}', [HomeController::class,'view_camera'])->name('view_camera');
+Route::get('/p', [HomeController::class,'prenotazioni'])->name('prenotazioni');
 
 require __DIR__.'/auth.php';
 

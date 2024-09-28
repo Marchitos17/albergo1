@@ -58,4 +58,7 @@ class HomeController extends Controller
             return redirect()->route('home')->with($notification);
         }
     }
+    public function prenotazioni(){
+        return view('home.prenotazioni');
+    }
 }
