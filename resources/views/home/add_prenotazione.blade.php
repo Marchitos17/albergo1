@@ -215,7 +215,7 @@
     
               <hr class="my-4">
     
-              <button class="w-100 btn btn-primary btn-lg mb-5" type="submit">Continua con il pagamento</button>
+              <button class="w-100 btn btn-lg mb-5" type="submit">Continua con il pagamento</button>
           </div>
         </div>
       </form>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/responsive-style.css">
     <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <script src="https://unpkg.com/scrollreveal"></script>
     <link
     rel="stylesheet"
@@ -15,3 +16,4 @@
     />
     <link href="css/osahan.css" rel="stylesheet">
     <link href="icofont/icofont.min.css" rel="stylesheet">
+    

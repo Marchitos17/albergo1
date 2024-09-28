@@ -28,11 +28,6 @@ body {
     font-weight: 500;
     font-family: 'Mulish', sans-serif;
 }
-button, a {
-    outline: none !important;
-    color: #dd646e;
-    text-decoration: none !important;
-}
 p {
     font-size: 13px;
     color: #7a7e8a;
@@ -402,47 +397,7 @@ img{
 .border-success {
     border-color: #3ecf8e!important;
 }
-.btn-danger,
-.badge-danger {
-    background-color: #f32129 !important;
-    border-color: #f32129 !important;
-}
-.btn-outline-danger {
-    color: #f32129 !important;
-    border-color: #f32129 !important;
-}
-.btn-outline-danger:hover {
-    color: #ffffff !important;
-    border-color: #f32129 !important;
-    background-color: #f32129 !important;
-}
-.text-danger {
-    color: #f32129 !important;
-}
-.border-danger {
-    border-color: #f32129!important;
-}
-.btn-primary,
-.badge-danger {
-    background-color: #dd646e !important;
-    border-color: #dd646e !important;
-}
-.btn-primary:hover, .btn-primary:focus {
-    background-color: #db5359 !important;
-    border-color: #db5359 !important;
-}
-.btn-outline-primary {
-    color: #dd646e !important;
-    border-color: #dd646e !important;
-}
-.btn-outline-primary:hover,
-.btn-outline-primary:not(:disabled):not(.disabled).active,
-.btn-outline-primary:not(:disabled):not(.disabled):active,
-.show>.btn-outline-primary.dropdown-toggle {
-    color: #ffffff !important;
-    border-color: #dd646e !important;
-    background-color: #dd646e !important;
-}
+
 .text-primary {
     color: #dd646e !important;
 }
