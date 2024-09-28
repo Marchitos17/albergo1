@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
             
-        $usertype = $request->user()->usertype;
+        /*$usertype = $request->user()->usertype;
             if($usertype == 'user'){
                 return view('home.index1');
             }else if($usertype == 'admin'){
@@ -43,10 +43,10 @@ class AuthenticatedSessionController extends Controller
                 );
         
                 return redirect('login')->with($notification);
-            }
+            }*/
 
-        //return redirect()->intended(route('/', absolute: false));
-    }
+        return redirect('/');
+    //}
 }
 
     /**

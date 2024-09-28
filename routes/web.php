@@ -35,4 +35,4 @@ Route::get('/v1/{id}', [HomeController::class,'view_camera'])->name('view_camera
 
 require __DIR__.'/auth.php';
 
-//SISTEMARE VIEW CAMERA
+//SISTEMARE dashboard utente
