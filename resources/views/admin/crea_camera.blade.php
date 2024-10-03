@@ -63,7 +63,7 @@
                   </div>
                   <div class="col-12 text-secondary">
                     <img id="showImage" src="{{ (!empty($data->immagine)) ? url('admin/img/'.$data->immagine) : url('img/map-close.png')}}" class="rounded-circle p-1 bg-primary" width="110">
-                </div>
+                  </div>
                 </div>
       
                 <hr class="my-4 bg-white">

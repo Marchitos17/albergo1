@@ -33,7 +33,8 @@ Route::group(['middleware' => 'auth'], function() {
 Route::post('/agg{id}', [HomeController::class,'aggiungip'])->name('aggiungip');
 Route::get('/v1/{id}', [HomeController::class,'view_camera'])->name('view_camera');
 Route::get('/p', [HomeController::class,'prenotazioni'])->name('prenotazioni');
+Route::post('/u/{id}', [HomeController::class,'update'])->name('update');
 
 require __DIR__.'/auth.php';
 
-//SISTEMARE dashboard utente
+//SISTEMARE invio update dati utente

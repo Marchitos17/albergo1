@@ -16,12 +16,39 @@
                      <div class="border-bottom p-4">
                         <div class="osahan-user text-center">
                            <div class="osahan-user-media">
-                              <img class="mb-3 rounded-pill shadow-sm mt-1" src="https://github.com/mdo.png" alt="gurdeep singh osahan">
+                              <img class="mb-3 rounded-pill shadow-sm mt-1" src="room/{{$profilo->foto}}">
                               <div class="osahan-user-media-body">
-                                 <h6 class="mb-2">Gurdeep Singh</h6>
-                                 <p class="mb-1">+91 85680-79956</p>
-                                 <p>iamosahan@gmail.com</p>
-                                 <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3" data-toggle="modal" data-target="#edit-profile-modal" href="#"><i class="icofont-ui-edit"></i> EDIT</a></p>
+                                 <h6 class="mb-2">{{Auth()->user()->name}}</h6>
+                                 <p class="mb-1">{{$profilo->telefono}}</p>
+                                 <p>{{$profilo->email}}</p>
+                                 <form action="{{route('update',$profilo->id)}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                 <!-- Modal  -->
+                                 <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#"><i class="icofont-ui-edit"></i> EDIT</a></p>
+                                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                       <div class="modal-header">
+                                          <h1 class="modal-title fs-5" id="staticBackdropLabel">Profilo</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                       </div>
+                                       <div class="modal-body">
+                                          <div class="col-12">
+                                             <div class="col-12 text-secondary">
+                                                <img id="showImage" src="{{ (!empty($profilo->foto)) ? url('admin/img/'.$profilo->foto) : url('img/map-close.png')}}" class="rounded-circle p-1 bg-primary" width="310">
+                                             </div>
+                                             <label for="text" class="form-label">Foto profilo <span class="text-body-secondary">(Obbligatorio)</span></label>
+                                             <input type="file" class="form-control" name="foto" id="image">
+                                          </div>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Chiudi</button>
+                                          <button type="submit" class="btn btn-success">Salva</button>
+                                       </div>
+                                    </div>
+                                    </div>
+                                 </div>
+                              <!-- Modal  -->
                               </div>
                            </div>
                         </div>
@@ -42,8 +69,6 @@
             <div class="col-md-9">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="profilo" role="tabpanel" aria-labelledby="profilo-tab">
-                     
-
                      <div class="card text-center">
                         <div class="card-header">
                            <div class="position-relative m-4">
@@ -64,7 +89,7 @@
                                        id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">3</button>                       
                                     </li>
                                  </ul>
-
+                                 
                                  <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
@@ -77,14 +102,14 @@
                                           <div class="row">
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label for="progresspill-firstname-input">First name</label>
-                                                     <input type="text" class="form-control" id="progresspill-firstname-input" placeholder="Enter your First Name">
+                                                     <label for="progresspill-firstname-input">Nome</label>
+                                                     <input type="text" class="form-control" id="progresspill-firstname-input" name="name" placeholder="Inserisci il tuo nome" value="{{$profilo->name}}">
                                                  </div>
                                              </div>
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label for="progresspill-lastname-input">Last name</label>
-                                                     <input type="text" class="form-control" id="progresspill-lastname-input" placeholder="Enter your Last Name">
+                                                     <label for="progresspill-lastname-input">Cognome</label>
+                                                     <input type="text" class="form-control" id="progresspill-lastname-input" name="cognome" placeholder="Inserisci il tuo cognome" value="{{$profilo->cognome}}">
                                                  </div>
                                              </div>
                                          </div>
@@ -92,29 +117,29 @@
                                          <div class="row">
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label for="progresspill-phoneno-input">Phone</label>
-                                                     <input type="text" class="form-control" id="progresspill-phoneno-input" placeholder="Enter your Phone No">
+                                                     <label for="progresspill-phoneno-input">Telefono</label>
+                                                     <input type="text" class="form-control" id="progresspill-phoneno-input" name="telefono" placeholder="Inserisci il tuo numero di telefono" value="{{$profilo->telefono}}">
                                                  </div>
                                              </div>
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
                                                      <label for="progresspill-email-input">Email</label>
-                                                     <input type="email" class="form-control" id="progresspill-email-input" placeholder="Enter your Email">
+                                                     <input type="email" class="form-control" id="progresspill-email-input" name="email" placeholder="Inserisci la tua email" value="{{$profilo->email}}">
                                                  </div>
                                              </div>
                                          </div>
                                          <div class="row">
                                              <div class="col-lg-12">
                                                  <div class="mb-3">
-                                                     <label for="progresspill-address-input">Address</label>
-                                                     <textarea id="progresspill-address-input" class="form-control" rows="2" placeholder="Enter your address"></textarea>
+                                                     <label for="progresspill-address-input">Indirizzo</label>
+                                                     <textarea id="progresspill-address-input" class="form-control" rows="2" name="indirizzo" placeholder="Inserisci il tuo indirizzo">{{$profilo->indirizzo}}</textarea>
                                                  </div>
                                              </div>
                                          </div>
 
                                         </div>
-                                        <div class="card-footer text-muted">
-                                          <button class="btn btn-primary" onclick="$('#nav-profile-tab').trigger('click')">Prossimo</button>
+                                        <div class="card-footer text-muted d-flex justify-content-end">
+                                          <button type="button" class="btn btn-primary" onclick="$('#nav-profile-tab').trigger('click')">Prossimo</button>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -128,7 +153,7 @@
                                           <div class="row">
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label for="progresspill-pancard-input" class="form-label">PAN Card</label>
+                                                     <label for="progresspill-pancard-input" class="form-label">Numero Carta</label>
                                                      <input type="text" class="form-control" id="progresspill-pancard-input" placeholder="Enter your PAN Card No">
                                                  </div>
                                              </div>
@@ -172,9 +197,9 @@
                                          </div>
 
                                         </div>
-                                        <div class="card-footer text-muted">
-                                          <button class="btn btn-primary float-start" onclick="$('#nav-home-tab').trigger('click')">Precedente</button>
-                                          <button class="btn btn-primary float-end" onclick="$('#nav-contact-tab').trigger('click')">Prossimo</button>
+                                        <div class="card-footer text-muted d-flex justify-content-between">
+                                          <button type="button" class="btn btn-primary" onclick="$('#nav-home-tab').trigger('click')">Precedente</button>
+                                          <button type="button" class="btn btn-primary " onclick="$('#nav-contact-tab').trigger('click')">Prossimo</button>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
@@ -188,16 +213,16 @@
                                           <div class="row">
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label for="progresspill-namecard-input" class="form-label">Name on Card</label>
-                                                     <input type="text" class="form-control" id="progresspill-namecard-input" placeholder="Enter your Name on Card">
+                                                     <label for="progresspill-namecard-input" class="form-label">Nome proprietario carta</label>
+                                                     <input type="text" class="form-control" id="progresspill-namecard-input" name="nomecarta" value="{{$profilo->nomecarta}}" placeholder="Enter your Name on Card">
                                                  </div>
                                              </div>
 
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label class="form-label">Credit Card Type</label>
-                                                     <select class="form-select">
-                                                           <option selected>Select Card Type</option>
+                                                     <label class="form-label">Tipo di carta</label>
+                                                     <select class="form-select" name="tipocarta">
+                                                           <option selected>{{$profilo->tipocarta}}</option>
                                                            <option value="AE">American Express</option>
                                                            <option value="VI">Visa</option>
                                                            <option value="MC">MasterCard</option>
@@ -209,14 +234,14 @@
                                          <div class="row">
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label for="progresspill-cardno-input" class="form-label">Credit Card Number</label>
-                                                     <input type="text" class="form-control" id="progresspill-cardno-input" placeholder="Enter your Credit Card Number">
+                                                     <label for="progresspill-cardno-input" class="form-label">Numero carta di credito</label>
+                                                     <input type="text" class="form-control" id="progresspill-cardno-input" name="numerocarta" value="{{$profilo->numerocarta}}" placeholder="Inserisci il numero della tua carta di credito">
                                                  </div>
                                              </div>
 
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label for="progresspill-card-verification-input" class="form-label">Card Verification Number</label>
+                                                     <label for="progresspill-card-verification-input" class="form-label">Numero verificata carta di credito</label>
                                                      <input type="text" class="form-control" id="progresspill-card-verification-input" placeholder="Enter your Card Verification Number">
                                                  </div>
                                              </div>
@@ -224,7 +249,7 @@
                                          <div class="row">
                                              <div class="col-lg-6">
                                                  <div class="mb-3">
-                                                     <label for="progresspill-expiration-input" class="form-label">Expiration Date</label>
+                                                     <label for="progresspill-expiration-input" class="form-label">Scadenza</label>
                                                      <input type="date" class="form-control" id="progresspill-expiration-input">
                                                  </div>
                                              </div>
@@ -232,7 +257,7 @@
                                          </div>
 
                                         </div>
-                                        <div class="card-footer text-muted">
+                                        <div class="card-footer text-muted d-flex justify-content-between">
                                           <button class="btn btn-primary" onclick="$('#nav-profile-tab').trigger('click')">Precedente</button>
                                           <button class="btn btn-primary" type="submit">Salva</button>
                                         </div>
@@ -240,20 +265,9 @@
                                   </div>
                            </div>
                         </div>
-                        
                       </div>
-
-                     
-                     
-
-
-
-
-
-
-
-
                     </div>
+                  </form>
                     <div class="tab-pane fade" id="ordini" role="tabpanel" aria-labelledby="ordini-tab">
                         <h4 class="font-weight-bold mt-0 mb-4">Past Orders</h4>
                            <div class="bg-white card mb-4 order-list shadow-sm">
@@ -459,7 +473,7 @@
                               </div>
                            </div>
                         </div>
-                    </div>
+                    </div>x
                 </div>
             </div>
             </div>

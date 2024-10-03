@@ -48,8 +48,8 @@
               <input type="password" class="form-control rounded-3" id="floatingPassword" name="password" placeholder="Password">
               <label for="floatingPassword">Password</label>
             </div>
-            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
-            <small class="text-body-secondary">Cliccando su Iscriviti, accetti i termini di utilizzo.</small>
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Accedi</button>
+            <small class="text-body-secondary">Cliccando su Accedi, accetti i termini di utilizzo.</small>
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">

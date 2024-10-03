@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Room;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -59,6 +60,27 @@ class HomeController extends Controller
         }
     }
     public function prenotazioni(){
-        return view('home.prenotazioni');
+        $profilo= User::find(Auth()->user()->id);
+        return view('home.prenotazioni',compact('profilo'));
+    }
+    public function update(request $request,$id){
+        $data = User::find($id);
+        $data->name = $request->name;
+        $data->cognome = $request->cognome;
+        $data->telefono = $request->telefono;
+        $data->indirizzo = $request->indirizzo;
+        $data->email = $request->email;
+        $data->nomecarta = $request->nomecarta;
+        $data->numerocarta = $request->numerocarta;
+        $data->tipocarta = $request->tipocarta;
+        $foto = $request->foto;
+        if($foto){
+            $imagename=time().'.'.$foto->getClientOriginalExtension();
+            $request->foto->move('room',$imagename);
+            $data->foto=$imagename;
+        }
+        $data->save();
+
+        return redirect()->back();
     }
 }
