@@ -30,9 +30,10 @@ Route::get('/mmess', [AdminController::class,'messaggi'])->name('messaggi')->mid
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/addp{id}', [HomeController::class,'add_prenotazione'])->name('add_prenotazione');
 });  
+Route::post('/', [HomeController::class,'home'])->name('home');
 Route::post('/agg{id}', [HomeController::class,'aggiungip'])->name('aggiungip');
 Route::get('/v1/{id}', [HomeController::class,'view_camera'])->name('view_camera');
-Route::get('/p', [HomeController::class,'prenotazioni'])->name('prenotazioni');
+Route::get('/p11', [HomeController::class,'prenotazioni11'])->name('prenotazioni11');
 Route::post('/u/{id}', [HomeController::class,'update'])->name('update');
 
 require __DIR__.'/auth.php';

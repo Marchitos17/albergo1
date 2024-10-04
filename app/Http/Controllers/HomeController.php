@@ -8,7 +8,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
-{
+{   
+    public function home(){
+        return view('home.index1');
+    }
     public function view_camera($id){
         $data = Room::find($id);
         return view('home.view_camera',compact('data'));
@@ -59,7 +62,7 @@ class HomeController extends Controller
             return redirect()->route('home')->with($notification);
         }
     }
-    public function prenotazioni(){
+    public function prenotazioni11(){
         $profilo= User::find(Auth()->user()->id);
         return view('home.prenotazioni',compact('profilo'));
     }

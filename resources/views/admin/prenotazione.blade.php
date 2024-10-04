@@ -38,7 +38,7 @@
       
           
           <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="images/logo.png" alt="" width="82" height="77">  
+            <img class="d-block mx-auto mb-4" src="immagini/logo4spina.png" alt="" width="82" height="77" style="border-radius: 20px">  
           <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               <h1 class="h2">Mostra camere</h1>
