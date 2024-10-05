@@ -1,47 +1,7 @@
-<style>
-  body {
-    font-family: "Lato", sans-serif;
-  }
-  
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-  </style>
+<?php
+  use App\Models\Carrello;
+  $data = Carrello::all();
+?>
 <header class="header_wrapper">
    <nav class="navbar navbar-expand-lg">
        <div class="container">
@@ -75,19 +35,42 @@
                                     </div>
                                  </li>
                                  <li class="nav-item dropdown dropdown-cart">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="openNav()">
-                                    <i class="fas fa-shopping-basket"></i> Carrello
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                      <i class="fas fa-shopping-basket"></i> Carrello
                                     <span class="badge badge-success">5</span>
                                     </a>
 
 
-                                    <div id="mySidenav" class="sidenav">
-                                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                                      <a href="#">About</a>
-                                      <a href="#">Services</a>
-                                      <a href="#">Clients</a>
-                                      <a href="#">Contact</a>
-                                    </div>
+                                    
+                                      <?php
+                                        $totale = 0; 
+                                      ?>
+                                      <!--@foreach ($data as $dataa)
+                                        <?php $totale= $totale + $dataa->room_prezzo; ?>
+                                        <div class="dropdown-cart-top-body border-top p-4">
+                                            <img class="img-fluid mr-3" alt="osahan" src="room/{{$dataa->immagine}}" style="width: 50px;">
+                                            <p class="mb-2"><i class="icofont-ui-press text-danger food-item"></i> {{$dataa->room_nome}}</p>
+                                            <p class="mb-2"><i class="icofont-ui-press text-danger food-item"></i> {{$dataa->room_prezzo}} </p>
+                                        </div>
+                                      @endforeach
+                                        <div class="dropdown-cart-top-footer border-top p-4">
+                                            <p class="mb-0 font-weight-bold text-secondary">Sub Total <span class="float-right text-dark">€{{$totale}}</span></p>
+                                            <small class="text-info">Extra charges may apply</small>  
+                                        </div>
+                                        <div class="dropdown-cart-top-footer border-top p-2">
+                                            <a class="btn btn-success btn-block btn-lg" href="checkout.html"> Checkout</a>
+                                        </div>
+                                        </div>-->
+
+                                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                          <div class="offcanvas-header">
+                                            <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                          </div>
+                                          <div class="offcanvas-body">
+                                            
+                                          </div>
+                                        </div>
                                     <!--
                                     <div class="dropdown-menu dropdown-cart-top p-0 dropdown-menu-left shadow-sm border-0">
                                        <div class="dropdown-cart-top-header p-4">
@@ -158,13 +141,3 @@
        </div>
      </nav>
 </header>
-
-<script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-  </script>

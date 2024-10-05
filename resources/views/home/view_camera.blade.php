@@ -246,15 +246,7 @@
               <li>
                   <p>Face Make(No)</p>
               </li>
-              <li>Quantita':
-                <select>
-                  <option value="1" selected>1</option>
-                  <option value="2">2</option>
-                  <option value="3" >3</option>
-                  <option value="4" >4</option>
-                  <option value="5" >5</option>
-                </select>
-              </li>
+              <li>Quantita': <span class="badge badge-success">{{$data->cameras}}</span></li>
           </ul>
           <hr />
           <h3>
@@ -263,11 +255,21 @@
             @else
               10€
             @endif
-          <sub class="fs-6 fw-normal">/NOTTE</sub></h3>
-          @if ($data->tipo == 'Camera singola')
-              <a href="{{route('add_prenotazione',$data->id)}}" class="main-btn">Prenota Ora</a>
+            <sub class="fs-6 fw-normal">/NOTTE</sub></h3>
+            @if ($data->cameras == '0')
+                <div><span>NON DISPONIBILE</span></div>
               @else
-              <div><span>NON DISPONIBILE</span></div>
+                <form action="{{route('carrello')}}" method="POST">
+                  @csrf
+                  <!--<input type="text" value="{{Auth()->user()->id}}" hidden>-->     
+                  <input type="text" name="id_camera" value="{{$data->id}}" hidden>           
+                  <input type="text" name="nome_camera" value="{{$data->titolo}}" hidden>
+                  <input type="text" name="immagine" value="{{$data->immagine}}" hidden>
+                  <input type="text" name="quantita" value="{{$data->cameras}}" hidden>
+                  <input type="text" name="prezzo" value="{{$data->camerasp}}" hidden>
+                  <button type="submit">Aggiungi al Carrello</button>
+                </form>
+                <!--<a href="{{route('add_prenotazione',$data->id)}}" class="main-btn">Prenota Ora</a>-->
             @endif
       </div>
     </div>
@@ -287,15 +289,7 @@
                 <li>
                     <p>Face Make(No)</p>
                 </li>
-                <li>Quantita':
-                  <select>
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3" >3</option>
-                    <option value="4" >4</option>
-                    <option value="5" >5</option>
-                  </select>
-                </li>
+                <li>Quantita': <span class="badge badge-success">{{$data->camerad}}</span></li>
             </ul>
             <hr />
             <h3>
@@ -305,10 +299,20 @@
                 10€
               @endif
             <sub class="fs-6 fw-normal">/NOTTE</sub></h3>
-            @if ($data->tipo == 'Camera doppia')
-              <a href="{{route('add_prenotazione',$data->id)}}" class="main-btn">Prenota Ora</a>
+            @if ($data->camerad == '0')
+                <div><span>NON DISPONIBILE</span></div>
               @else
-              <div><span>NON DISPONIBILE</span></div>
+                <form action="{{route('carrello')}}" method="POST" enctype="multipart/form-data">
+                  @csrf
+                  <!--<input type="text" value="{{Auth()->user()->id}}" hidden>-->     
+                  <input type="text" name="id_camera" value="{{$data->id}}" hidden>           
+                  <input type="text" name="nome_camera" value="{{$data->titolo}}" hidden>
+                  <input type="text" name="immagine" value="{{$data->immagine}}" hidden>
+                  <input type="text" name="quantita" value="{{$data->camerad}}" hidden>
+                  <input type="text" name="prezzo" value="{{$data->cameradp}}" hidden>
+                  <button type="submit">Aggiungi al Carrello</button>
+                </form>
+                <!--<a href="{{route('add_prenotazione',$data->id)}}" class="main-btn">Prenota Ora</a>-->
             @endif
         </div>
     </div>
@@ -328,15 +332,7 @@
                 <li>
                     <p>Face Make(No)</p>
                 </li>
-                <li>Quantita':
-                  <select>
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3" >3</option>
-                    <option value="4" >4</option>
-                    <option value="5" >5</option>
-                  </select>
-                </li>
+                <li>Quantita': <span class="badge badge-success">{{$data->camerat}}</span></li>
             </ul>
             <hr />
             <h3>
@@ -346,10 +342,20 @@
                 10€
               @endif
             <sub class="fs-6 fw-normal">/NOTTE</sub></h3>
-            @if ($data->tipo == 'Camera tripla')
-              <a href="{{route('add_prenotazione',$data->id)}}" class="main-btn">Prenota Ora</a>
+            @if ($data->camerat == '0')
+                <div><span>NON DISPONIBILE</span></div>
               @else
-              <div><span>NON DISPONIBILE</span></div>
+                <form action="{{route('carrello')}}" method="POST">
+                  @csrf
+                  <!--<input type="text" value="{{Auth()->user()->id}}" hidden>-->     
+                  <input type="text" name="id_camera" value="{{$data->id}}" hidden>           
+                  <input type="text" name="nome_camera" value="{{$data->titolo}}" hidden>
+                  <input type="text" name="immagine" value="{{$data->immagine}}" hidden>
+                  <input type="text" name="quantita" value="{{$data->camerat}}" hidden>
+                  <input type="text" name="prezzo" value="{{$data->cameratp}}" hidden>
+                  <button type="submit">Aggiungi al Carrello</button>
+                </form>
+                <!--<a href="{{route('add_prenotazione',$data->id)}}" class="main-btn">Prenota Ora</a>-->
             @endif
         </div>
     </div>
@@ -369,15 +375,7 @@
                 <li>
                     <p>Face Make(No)</p>
                 </li>
-                <li>Quantita':
-                  <select>
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3" >3</option>
-                    <option value="4" >4</option>
-                    <option value="5" >5</option>
-                  </select>
-                </li>
+                <li>Quantita': <span class="badge badge-success">{{$data->cameraq}}</span></li>
             </ul>
             <hr />
             <h3>
@@ -387,10 +385,20 @@
                 10€
               @endif
             <sub class="fs-6 fw-normal">/NOTTE</sub></h3>
-            @if ($data->tipo == 'Camera quadrupla')
-              <a href="{{route('add_prenotazione',$data->id)}}" class="main-btn">Prenota Ora</a>
+            @if ($data->cameraq == '0')
+                <div><span>NON DISPONIBILE</span></div>
               @else
-              <div><span>NON DISPONIBILE</span></div>
+              <form action="{{route('carrello')}}" method="POST">
+                @csrf
+                <!--<input type="text" value="{{Auth()->user()->id}}" hidden>-->     
+                <input type="text" name="id_camera" value="{{$data->id}}" hidden>           
+                <input type="text" name="nome_camera" value="{{$data->titolo}}" hidden>
+                <input type="text" name="immagine" value="{{$data->immagine}}" hidden>
+                <input type="text" name="quantita" value="{{$data->cameraq}}" hidden>
+                <input type="text" name="prezzo" value="{{$data->cameraqp}}" hidden>
+                <button type="submit">Aggiungi al Carrello</button>
+              </form>
+                <!--<a href="{{route('add_prenotazione',$data->id)}}" class="main-btn">Prenota Ora</a>-->
             @endif
         </div>
     </div>

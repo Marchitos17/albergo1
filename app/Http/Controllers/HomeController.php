@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Room;
 use App\Models\User;
+use App\Models\Carrello;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -86,4 +87,25 @@ class HomeController extends Controller
 
         return redirect()->back();
     }
+    public function carrello(request $request){
+        $data = new Carrello();
+        $data->user_id = Auth()->user()->id;
+        $data->room_id = $request->id_camera;
+        $data->room_nome = $request->nome_camera;
+        $data->immagine = $request->immagine;
+        $data->room_quantità = $request->quantita;
+        $data->room_prezzo = $request->prezzo;
+
+        $data->save();
+
+        $notification = array(
+            'message' => 'Camera aggiunta al carrello',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+
+
+
+
 }

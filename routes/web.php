@@ -35,7 +35,8 @@ Route::post('/agg{id}', [HomeController::class,'aggiungip'])->name('aggiungip');
 Route::get('/v1/{id}', [HomeController::class,'view_camera'])->name('view_camera');
 Route::get('/p11', [HomeController::class,'prenotazioni11'])->name('prenotazioni11');
 Route::post('/u/{id}', [HomeController::class,'update'])->name('update');
+Route::post('/carrello', [HomeController::class,'carrello'])->name('carrello');
 
 require __DIR__.'/auth.php';
 
-//SISTEMARE invio update dati utente
+//NON VA IL CARRELLO, OFF CANVAS
