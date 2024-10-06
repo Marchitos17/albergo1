@@ -6,12 +6,14 @@
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
     @include('home.header')
 
+    
+
     @include('home.slider')
-
+    
     @include('home.about')
-
+    
     @include('home.room')
-
+    <div id="main">
     <section id="servizi" class="servizi_wrapper">
       <div class="container">
         <div class="row">
@@ -343,7 +345,7 @@
           </div>
       </div>
     </section>
-
+    </div>
     @include('home.footer')
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>

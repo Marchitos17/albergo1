@@ -39,4 +39,4 @@ Route::post('/carrello', [HomeController::class,'carrello'])->name('carrello');
 
 require __DIR__.'/auth.php';
 
-//NON VA IL CARRELLO, OFF CANVAS
+//NON VA IL CARRELLO, SISTEMALO
