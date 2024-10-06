@@ -10,7 +10,6 @@ a:hover {
   text-decoration: none;
 }
 .sidenav {
-  height: 100%;
   width: 0;
   position: fixed;
   z-index: 999999999;
@@ -44,7 +43,6 @@ a:hover {
     font-size: 18px;
   }
 }
-
 .sidenav a.sidenav__menu-item,
 .dropdown-btn {
   padding: 6px 8px;
@@ -169,10 +167,11 @@ a:hover {
                                     <div id="mySidenav" class="sidenav" onmouseout="closeNav()">
                                       <?php
                                         $totale = 0; 
-                                      ?>              
+                                      ?> 
+                                      <div class="container">             
                                               <div class="row">
                                                     <div class="col-md-6 text-center">
-                                                      <h4>Carrello</h4>
+                                                      <h4 class="text-center mt-4">Carrello</h4>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="flex center sec-center" style="height:80px;color:#fff;">
@@ -187,10 +186,12 @@ a:hover {
                                                     <p class="float-end text-body-secondary"> {{$dataa->room_prezzo}} </p>
                                                   </div>
                                                 @endforeach
-                                                <a class="sidenav__menu-item text-black text-center" href="#">Paga</a>
-                                                <a class="sidenav__menu-item text-black text-center" href="#">Vedi il carrello</a>
+                                                <div class="align-center">
+                                                  <a class="sidenav__menu-item text-black text-center bg-body-secondary" href="#">Paga</a>
+                                                  <a class="sidenav__menu-item text-black text-center" href="#">Vedi il carrello</a>
+                                                </div>
                                             </div>
-
+                                          </div>
                                       <!--<div class="dropdown-menu dropdown-cart-top p-0 dropdown-menu-left shadow-sm border-0">
                                         <div class="dropdown-cart-top-footer p-1 text-center">
                                           <p class="mb-0 font-weight-bold text-secondary"><h4>Carrello</h4></p>
@@ -266,7 +267,7 @@ a:hover {
         if ($(window).width() < 601) {
             document.getElementById("mySidenav").style.width = "40%";
         } else {
-            document.getElementById("mySidenav").style.width = "15%";
+            document.getElementById("mySidenav").style.width = "30%";
             document.getElementById("open-menu").style.display = "none";
         }
     }
