@@ -2,51 +2,131 @@
   use App\Models\Carrello;
   $data = Carrello::all();
 ?>
-
 <style>
-    .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: white;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+a,
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding: 40px 0;
+}
+
+.sidenav a.closebtn {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 36px;
+  color: #fff;
+}
+
+.sidenav a.closebtn:hover {
+  text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
 
   .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+    font-size: 18px;
+  }
+}
+
+.sidenav a.sidenav__menu-item,
+.dropdown-btn {
+  padding: 6px 8px;
+  font-size: 1.5rem;
+  color: #fff;
+  display: block;
+  border: none;
+  background: none;
+  width: 90%;
+  text-align: left;
+  cursor: pointer;
+  margin: 6px;
+  border: 1px solid transparent;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: blue;
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.active {
+    background-color: #004bd7;
+    color: #fff;
+}
+
+.sidenav a.sidenav__menu-item:hover,
+.dropdown-btn:hover {
+  color: black;
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.active {
+  background-color: $blu-wimtv;
+  color: #fff;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: rgba(37, 32, 29, 0.2);
+  padding: 1px 0 1px 8px;
+}
+
+.sidenav .fa-caret-down {
+  float: right;
+  font-size: 18px;
+  padding: 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
 
-  .sidenav a:hover {
-    color: #f1f1f1;
+  .sidenav a {
+    font-size: 18px;
   }
+}
 
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
+/* CUSTOM SCROLLBAR */
+#mySidenav::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
 
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
-  }
+#mySidenav::-webkit-scrollbar {
+  width: 3px;
+  background-color: #F5F5F5;
+}
 
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+#mySidenav::-webkit-scrollbar-thumb {
+  background-color: $blu-wimtv;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%,
+    color-stop(.5, rgba(255, 255, 255, .2)),
+    color-stop(.5, transparent), to(transparent));
+}
 </style>
 <header class="header_wrapper">
    <nav class="navbar navbar-expand-lg">
@@ -62,7 +142,7 @@
            <ul class="navbar-nav menu-navbar-nav">
              @if (Route::has('login'))
                      @auth
-                           <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                           <div class="collapse navbar-collapse " id="navbarNavDropdown">
                               <ul class="navbar-nav ml-auto">
                                  <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -81,14 +161,37 @@
                                     </div>
                                  </li>
                                  <li class="nav-item dropdown dropdown-cart">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="openNav()" >
+                                    <a class="nav-link dropdown-toggle open-menu" href="#" id="open-menu" onmouseover="openNav()" role="button">
                                       <i class="fas fa-shopping-basket"></i> Carrello
-                                    <span class="badge badge-success">5</span>
+                                      <span class="badge badge-success">5</span>
                                     </a>
+                                 </li>
+                                    <div id="mySidenav" class="sidenav" onmouseout="closeNav()">
                                       <?php
                                         $totale = 0; 
-                                      ?>
-                                      <div class="dropdown-menu dropdown-cart-top p-0 dropdown-menu-left shadow-sm border-0">
+                                      ?>              
+                                              <div class="row">
+                                                    <div class="col-md-6 text-center">
+                                                      <h4>Carrello</h4>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="flex center sec-center" style="height:80px;color:#fff;">
+                                                            <h6 id="txt" class="margin-5"></h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @foreach ($data as $dataa)
+                                                  <div class="dropdown-cart-top-body p-1">
+                                                    <img class="img-fluid mr-3" alt="osahan" src="room/{{$dataa->immagine}}" style="width: 50px;">
+                                                    <p class="float-end text-body-secondary"> {{$dataa->room_nome}}</p>
+                                                    <p class="float-end text-body-secondary"> {{$dataa->room_prezzo}} </p>
+                                                  </div>
+                                                @endforeach
+                                                <a class="sidenav__menu-item text-black text-center" href="#">Paga</a>
+                                                <a class="sidenav__menu-item text-black text-center" href="#">Vedi il carrello</a>
+                                            </div>
+
+                                      <!--<div class="dropdown-menu dropdown-cart-top p-0 dropdown-menu-left shadow-sm border-0">
                                         <div class="dropdown-cart-top-footer p-1 text-center">
                                           <p class="mb-0 font-weight-bold text-secondary"><h4>Carrello</h4></p>
                                       </div>
@@ -110,72 +213,7 @@
                                             </div>
                                           </div>
                                           </div>
-                                        </div>
-
-                                        <!--<div id="mySidenav" class="sidenav">
-                                          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                                          <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
-                                            <div class="list-group">
-                                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                                                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-                                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                                  <div>
-                                                    <h6 class="mb-0">List group item heading</h6>
-                                                    <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-                                                  </div>
-                                                  <small class="opacity-50 text-nowrap">now</small>
-                                                </div>
-                                              </a>
-                                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                                                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-                                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                                  <div>
-                                                    <h6 class="mb-0">Another title here</h6>
-                                                    <p class="mb-0 opacity-75">Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.</p>
-                                                  </div>
-                                                  <small class="opacity-50 text-nowrap">3d</small>
-                                                </div>
-                                              </a>
-                                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                                                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-                                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                                  <div>
-                                                    <h6 class="mb-0">Third heading</h6>
-                                                    <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-                                                  </div>
-                                                  <small class="opacity-50 text-nowrap">1w</small>
-                                                </div>
-                                              </a>
-                                            </div>
-                                          </div>
                                         </div>-->
-                                    
-                                    <!--<div class="dropdown-menu dropdown-cart-top p-0 dropdown-menu-left shadow-sm border-0">
-                                       <div class="dropdown-cart-top-header p-4">
-                                          <img class="img-fluid mr-3" alt="osahan" src="img/cart.jpg">
-                                          <h6 class="mb-0">Gus's World Famous Chicken</h6>
-                                          <p class="text-secondary mb-0">310 S Front St, Memphis, USA</p>
-                                          <small><a class="text-primary font-weight-bold" href="#">View Full Menu</a></small>
-                                       </div>
-                                       <div class="dropdown-cart-top-body border-top p-4">
-                                          <p class="mb-2"><i class="icofont-ui-press text-danger food-item"></i> Chicken Tikka Sub 12" (30 cm) x 1   <span class="float-right text-secondary">$314</span></p>
-                                          <p class="mb-2"><i class="icofont-ui-press text-success food-item"></i> Corn & Peas Salad x 1   <span class="float-right text-secondary">$209</span></p>
-                                          <p class="mb-2"><i class="icofont-ui-press text-success food-item"></i> Veg Seekh Sub 6" (15 cm) x 1  <span class="float-right text-secondary">$133</span></p>
-                                          <p class="mb-2"><i class="icofont-ui-press text-danger food-item"></i> Chicken Tikka Sub 12" (30 cm) x 1   <span class="float-right text-secondary">$314</span></p>
-                                          <p class="mb-2"><i class="icofont-ui-press text-danger food-item"></i> Corn & Peas Salad x 1   <span class="float-right text-secondary">$209</span></p>
-                                       </div>
-                                       <div class="dropdown-cart-top-footer border-top p-4">
-                                          <p class="mb-0 font-weight-bold text-secondary">Sub Total <span class="float-right text-dark">$499</span></p>
-                                          <small class="text-info">Extra charges may apply</small>  
-                                       </div>
-                                       <div class="dropdown-cart-top-footer border-top p-2">
-                                          <a class="btn btn-success btn-block btn-lg" href="checkout.html"> Checkout</a>
-                                       </div>
-                                    </div>
-                                 </li>
-                              </ul>
-                           </div>
-                          </div>--> 
                      @else
                      <li class="nav-item">
                       <a class="nav-link fw-bold active" aria-current="page" href="#home">Home</a>
@@ -221,13 +259,35 @@
      </nav>
 </header>
 <script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "450px";
-    document.getElementById("main").style.marginLeft = "450px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-  }
-  </script>
+  document.getElementById("mySidenav").addEventListener("mouseover", openNav);
+    document.getElementById("mySidenav").addEventListener("mouseout", closeNav);
+    /* open sidebar */
+    function openNav() {
+        if ($(window).width() < 601) {
+            document.getElementById("mySidenav").style.width = "40%";
+        } else {
+            document.getElementById("mySidenav").style.width = "15%";
+            document.getElementById("open-menu").style.display = "none";
+        }
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("open-menu").style.display = "flex";
+    }
+
+    /* dropdown-menu */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
